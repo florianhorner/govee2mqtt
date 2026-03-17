@@ -738,9 +738,6 @@ mod tests {
 
     #[test]
     fn test_camel_case_emoji() {
-        assert_eq!(
-            camel_case_to_space_separated("🔥lightMode"),
-            "🔥light Mode"
-        );
+        assert_eq!(camel_case_to_space_separated("🔥lightMode"), "🔥light Mode");
     }
 }
