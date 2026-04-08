@@ -1,5 +1,23 @@
 # Frequently Asked Questions
 
+## Where is the "Govee to MQTT" device?
+
+When Govee2MQTT starts, it creates a special device called **"Govee to MQTT"**
+in Home Assistant (under the MQTT integration in Settings → Devices & Services).
+This is the bridge itself — not one of your Govee devices. It contains:
+
+- A **"Purge Caches"** button — forces Govee2MQTT to re-fetch device data from Govee's servers. Use this after adding new Tap-to-Run shortcuts or if devices seem stale.
+- A **"Version"** sensor — shows which version of Govee2MQTT is running.
+- **Tap-to-Run** scenes — if you've set up shortcuts in the Govee Home app, they appear here as Scene entities.
+
+## What is MQTT?
+
+MQTT is a messaging protocol — think of it as a shared mailbox that
+Govee2MQTT and Home Assistant both use to communicate. You need an MQTT
+"broker" (server) running for this to work. The easiest option is the
+[Mosquitto app](https://www.home-assistant.io/integrations/mqtt/) for
+Home Assistant.
+
 ## Why can't I turn off a Segment?
 
 Govee's API only supports setting brightness and color for segments — not

@@ -48,8 +48,9 @@ configuration:
     name: Log Verbosity
     description: >-
       Only needed for troubleshooting. Enter "govee=trace" for
-      maximum detail. Warning: trace mode may log sensitive data
-      like tokens — redact these before sharing logs.
+      maximum detail. Warning: trace mode may include passwords
+      and other sensitive data in the log. Remove any sensitive
+      information before sharing logs with others.
   no_multicast:
     name: Disable Multicast Discovery
     description: >-
