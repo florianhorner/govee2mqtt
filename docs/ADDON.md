@@ -72,6 +72,26 @@ and Home Assistant both check. The Mosquitto broker app runs this mailbox.
 4. **Click** "Save" (bottom right)
 5. **Click** the "Info" tab, then **click** "Start"
 
+## What to expect after setup
+
+Once Govee2MQTT starts, here's what happens in Home Assistant:
+
+**Under Settings → Devices & Services → MQTT**, you'll see:
+
+- A **"Govee to MQTT"** device — this is the bridge itself, not a Govee device. It has a "Purge Caches" button and a version sensor.
+- **One device per Govee product** — each light, humidifier, etc. appears as its own device with controls matching what Govee's API supports.
+
+**For each light**, you'll typically see:
+
+- A **light entity** with on/off, brightness, color, and color temperature controls
+- An **effects list** with your DIY scenes and music modes (requires API key)
+- **"Scene Next" / "Scene Previous" buttons** for cycling through scenes (extended fork only)
+- **Segment entities** (e.g. "Segment 001") if your device supports segment control (requires API key)
+
+**For humidifiers, heaters, fans**, etc.: a climate or humidifier entity with the controls Govee's API exposes for that model.
+
+**Status updates** arrive within a few seconds when you control devices from the Govee app or physical buttons. Devices with LAN API enabled update the fastest.
+
 ## Verify
 
 1. **Check** the "Logs" tab (top of screen) to see startup diagnostics
