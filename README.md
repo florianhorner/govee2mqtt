@@ -71,7 +71,7 @@ via the [Home Assistant MQTT Integration](https://www.home-assistant.io/integrat
 The UTF-8 crash fix is now upstream in release `2026.03.25-ab9deb66`. If you only installed this fork for that fix, you can switch back:
 
 1. **In Home Assistant**, go to **Settings → Add-ons → Add-on Store** (three-dot menu → Repositories).
-2. **Remove** this fork's repo URL: `https://github.com/florianhorner/govee2mqtt`
+2. **Remove** this fork's repo URL: `https://github.com/florianhorner/govee2mqtt-extended`
 3. **Add** the upstream repo URL: `https://github.com/wez/govee2mqtt`
 4. **Refresh** and update/reinstall the Govee2MQTT add-on.
 5. **Restart** the add-on. Verify your Govee devices come back online.
