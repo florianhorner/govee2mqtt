@@ -1,6 +1,6 @@
-> **This is a maintained community fork** with additional fixes and device support not yet in the upstream project.
-> If you installed this fork for the UTF-8 crash fix (now [merged upstream](https://github.com/wez/govee2mqtt/pull/606)), you can [switch back](#switch-back-to-upstream).
-> See [What this fork adds](#what-this-fork-adds) for details.
+> **Personal fork of [wez/govee2mqtt](https://github.com/wez/govee2mqtt).**
+> I use this to learn Rust, Home Assistant addon development, and GitHub release automation.
+> All bug fixes are contributed back upstream. If upstream has what you need, [use upstream](#using-upstream-instead) — that's the recommendation.
 
 # Govee2MQTT: Govee-to-Home-Assistant Bridge
 
@@ -56,26 +56,36 @@ Choose the installation method that matches your Home Assistant setup:
 
 ---
 
-## What this fork adds
+## Why this fork exists
 
-This is a community fork of [wez/govee2mqtt](https://github.com/wez/govee2mqtt) with
-additional fixes and features:
+This is a personal fork of [wez/govee2mqtt](https://github.com/wez/govee2mqtt). I run it for three reasons:
 
-* **H60B0 (Neon Rope Light 2)** — added as LAN-capable device
-* **Panic hardening** — `.expect()` panics replaced with graceful error handling
-* **Exit code fix** — silent `exit(0)` changed to `exit(1)` so Home Assistant properly restarts the app on failure
-* **Scene quick-cycle** — Next/Previous buttons and scene info sensor
-* **CI improvements** — clippy gate, pre-commit hooks, automated testing
+1. **Learning Rust and Home Assistant addon development** — this is real infrastructure running in my home, which makes it a great project to learn on.
+2. **Practicing the full GitHub release pipeline** — CI/CD, multi-arch Docker builds, automated tagging, pre-commit hooks, the works.
+3. **Experimenting with features** — things like scene quick-cycle buttons that I want for my own setup.
 
-**Upstream status:**
-- ✅ UTF-8 fix — [merged via #606](https://github.com/wez/govee2mqtt/pull/606) on 2026-03-25
-- ⏳ H60B0 device support — [PR #629](https://github.com/wez/govee2mqtt/pull/629) pending
-- ⏳ Panic hardening + exit code fix — [#617](https://github.com/wez/govee2mqtt/issues/617), [#618](https://github.com/wez/govee2mqtt/issues/618) filed, no PR yet
-- 🆕 Scene quick-cycle buttons + catalog — fork-only feature, not submitted upstream
+Every bug fix I make here gets contributed back upstream. wez's project is the upstream, and I want it to succeed. This fork is not a replacement for it.
 
-## Switch back to upstream
+### What I've contributed back
 
-The UTF-8 crash fix is now upstream in release `2026.03.25-ab9deb66`. If you only installed this fork for that fix, you can switch back:
+| Fix | Upstream status |
+|-----|----------------|
+| UTF-8 crash fix | [Merged via #606](https://github.com/wez/govee2mqtt/pull/606) |
+| H60B0 (Neon Rope Light 2) device support | [PR #629](https://github.com/wez/govee2mqtt/pull/629) submitted |
+| Panic hardening | [#617](https://github.com/wez/govee2mqtt/issues/617) filed |
+| Exit code fix | [#618](https://github.com/wez/govee2mqtt/issues/618) filed |
+| 2FA login support | [PR #647](https://github.com/wez/govee2mqtt/issues/647) submitted |
+
+### Fork-only experiments
+
+These are things I'm building for my own use. They may or may not make sense upstream.
+
+* **Scene quick-cycle** — Next/Previous buttons and scene info sensor for looping through scenes
+* **CI improvements** — clippy gate, pre-commit hooks, automated testing, docs-only commit detection
+
+## Using upstream instead
+
+If you don't need the experimental features above, **use upstream**. That's the recommendation. wez's project is the real thing.
 
 1. **In Home Assistant**, go to **Settings → Apps → App store** (three-dot menu → Repositories).
 2. **Remove** this fork's repo URL: `https://github.com/florianhorner/govee2mqtt-extended`
@@ -83,19 +93,18 @@ The UTF-8 crash fix is now upstream in release `2026.03.25-ab9deb66`. If you onl
 4. **Refresh** and update/reinstall the Govee2MQTT app.
 5. **Restart** the app. Verify your Govee devices come back online.
 
-**Note:** If you want the additional fixes in this fork (H60B0 support, panic hardening, exit code fix), stay on this fork until those are merged upstream.
-
 ## Credits
 
-This work is based on wez's earlier work with [Govee LAN
-Control](https://github.com/wez/govee-lan-hass/).
+This fork exists because of wez's work. The entire project, architecture, and device support is his.
 
-The AWS IoT support was made possible by the work of @bwp91 in
-[homebridge-govee](https://github.com/bwp91/homebridge-govee/).
+* [wez/govee2mqtt](https://github.com/wez/govee2mqtt) — the upstream project
+* [wez/govee-lan-hass](https://github.com/wez/govee-lan-hass/) — the earlier Govee LAN integration this builds on
+* [@bwp91/homebridge-govee](https://github.com/bwp91/homebridge-govee/) — made the AWS IoT support possible
+* [theg1nger](https://github.com/wez/govee2mqtt/pull/606) — original author of the UTF-8 fix
 
-The UTF-8 fix was originally authored by [theg1nger](https://github.com/wez/govee2mqtt/pull/606).
+## Support the upstream
 
-## Want to show your support?
+If Govee2MQTT is useful to you, support wez — he built the thing.
 
 * [Sponsor wez on Github](https://github.com/sponsors/wez)
 * [Sponsor wez on Patreon](https://patreon.com/WezFurlong)

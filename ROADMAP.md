@@ -30,11 +30,12 @@ Fixes and features submitted back to [wez/govee2mqtt](https://github.com/wez/gov
 | What | Upstream status | Fork status |
 |------|----------------|-------------|
 | UTF-8 crash fix | [Merged via #606](https://github.com/wez/govee2mqtt/pull/606) | Included since 2026.03.16 |
-| H60B0 device support | [PR #629](https://github.com/wez/govee2mqtt/pull/629) pending | Included since 2026.03.22 |
+| H60B0 device support | [PR #629](https://github.com/wez/govee2mqtt/pull/629) submitted | Included since 2026.03.22 |
 | Panic hardening | [#617](https://github.com/wez/govee2mqtt/issues/617) filed | Included since 2026.03.22 |
 | Exit code fix | [#618](https://github.com/wez/govee2mqtt/issues/618) filed | Included since 2026.03.22 |
-| Scene quick-cycle | Fork-only (not submitted) | Included since 2026.03.26 |
+| 2FA login support | [PR #647](https://github.com/wez/govee2mqtt/issues/647) submitted | Included since 2026.04.11 |
+| Scene quick-cycle | Fork-only experiment | Included since 2026.03.26 |
 
 ## Contributing
 
-If you use Govee devices with Home Assistant and hit a bug or want a feature, this fork is a good place to land it — especially if upstream review timelines are long. PRs welcome. The bar is: `cargo build`, `cargo clippy -- -D warnings`, `cargo test`, `cargo fmt --check` all pass.
+PRs and bug reports welcome. If you want to fix a bug, consider submitting it to [upstream](https://github.com/wez/govee2mqtt) first — that's where most users are, and I'd rather the fix land there. If you want to experiment with something that might not fit upstream, this fork is a good place for that. The bar is: `cargo build`, `cargo clippy -- -D warnings`, `cargo test`, `cargo fmt --check` all pass.
