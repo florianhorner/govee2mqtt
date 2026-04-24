@@ -1,6 +1,6 @@
 name: Govee2MQTT Bridge (sake1011 2FA Patch)
 image: ghcr.io/sake1011/govee2mqtt-extended-v2-{arch}
-version: "2026.04.21-db289bf3"
+version: "2026.04.24-2fa-v2"
 slug: govee2mqtt
 stage: experimental
 description: Fork of wez/govee2mqtt with device fixes, crash hardening, and scene cycling. Prefer upstream unless you need these specific changes.
